@@ -35,6 +35,20 @@ class Metric < OpenStruct
   def self.to_john_time(days)
     JOHN_TIME_START.days_since(days)
   end
+
+  def to_json(*a)
+    {
+      'json_class' => self.class.name,
+      'data'       => [
+                        end_date,
+                        last_calculated_at,
+                        metric_id,
+                        start_date,
+                        time_range_length,
+                        value,
+                      ]
+    }.to_json(*a)
+  end
 end
 
 setup.mappers do

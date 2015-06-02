@@ -27,4 +27,22 @@ describe Metric do
       end
     end
   end
+
+  describe '#to_json' do
+    subject do
+      Metric.new({
+                   end_date: 949,
+                   last_calculated_at: 1315325102,
+                   metric_id: 4,
+                   start_date: 949,
+                   time_range_length: 1,
+                   value: 4,
+                 }).to_json
+    end
+    
+    it do
+      is_expected.
+        to eq "{\"json_class\":\"Metric\",\"data\":[949,1315325102,4,949,1,4]}"
+    end
+  end
 end

@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby '2.2.2'
 
+gem 'json', '~> 1.8.3'
+
 gem 'activesupport', '~> 4.2.1'
 gem 'rom-csv', '~> 0.1.0'
 
