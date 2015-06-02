@@ -29,6 +29,12 @@ setup.relation(:metrics) do
 end
 
 class Metric < OpenStruct
+  JOHN_TIME_START = Date.new(2009, 1, 1)
+  private_constant :JOHN_TIME_START
+
+  def self.to_john_time(days)
+    JOHN_TIME_START.days_since(days)
+  end
 end
 
 setup.mappers do
