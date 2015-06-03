@@ -17,8 +17,12 @@ module Metrics
       end
 
       route_param :id do
+        params do
+          requires :id, type: Integer, desc: 'The id of the metric'
+        end
         get do
-                    
+          rom.relation(:metrics).as(:entity).by_metric_id(params[:id]).
+            to_a.to_json
         end
       end
     end

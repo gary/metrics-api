@@ -25,4 +25,17 @@ describe Metrics::API do
       end
     end
   end
+
+  describe '/metrics/:id' do
+    context 'GET' do
+      it 'returns all metrics matching :id' do
+        pending('JSON parser error due to mismatch in Metric serialization')
+        get '/metrics/40'
+
+        # response = JSON.parse(last_response.body)
+
+        expect(response).to have(5).items
+      end
+    end
+  end
 end
