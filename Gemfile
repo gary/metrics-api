@@ -6,7 +6,8 @@ gem 'json', '~> 1.8.3'
 
 gem 'grape', '~> 0.11.0'
 
-gem 'activesupport', '~> 4.2.1'
+gem 'activesupport', '~> 4.2'
+gem 'rack', '~> 1.6'
 gem 'rom-csv', '~> 0.1.0'
 
 group :development, :test do
